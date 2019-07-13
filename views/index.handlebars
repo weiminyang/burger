@@ -1,35 +1,72 @@
-<h1>Burgers!</h1>
+<div class="container ">
+  <!-- Content here -->
+  <div class="row text-center my-5">
 
-<h2>Burgers waiting to be devoured!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#unless devoured}}
-      {{burger_name}}
-      <button class="change-devoured" data-id="{{id}}" >
-		Eat this burger!
-	</button>
-    {{/unless}}
-  {{/each}}
-</ul>
 
-<h2>Devoured burgers!</h2>
 
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{burger_name}}
-    {{/if}}
-  {{/each}}
-</ul>
 
-<h2>Order a burger</h2>
-<form class="create-form">
+    <h1 class="text-center mx-auto">Eat-Da-Burger!</h1>
+  </div>
+    <div class="row">
+      <div class="col-3">
 
-  <div class="form-group">
-    <label for="ca">Burger</label>
-    <input type="text" id="ca" name="name">
+      <img
+        src="https://purepng.com/public/uploads/large/purepng.com-fast-food-burgerburgerfast-foodhammeatfast-food-burgermc-donaldsburger-king-231519340258hhxn3.png"
+        width="200px" alt="">
+    </div>
+    <div class="col-5">
+
+    </div>
+    <div class="col-4">
+
+      <h3>Order a burger</h3>
+      <form class="create-form">
+
+        <div class="form-group">
+          <label for="ca">Burger</label>
+          <input type="text" id="ca" name="name">
+        </div>
+
+        <button type="submit" class="btn btn-primary">Order</button>
+      </form>
+    </div>
+  
+
+  </div>
+  <div class="row">
+    <div class="col-6">
+
+      <h2 class="text-center mx-auto">Burgers waiting to be devoured!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#unless devoured}}
+        <li class="list-group-item list-group-item-warning">
+          {{burger_name}}
+          <button class="change-devoured float-right btn btn-success" data-id="{{id}}">
+            Eat this burger!
+          </button>
+        </li>
+        {{/unless}}
+        {{/each}}
+      </ul>
+    </div>
+    <div class="col-6">
+
+      <h2 class="text-center mx-auto">Devoured burgers!</h2>
+
+      <ul>
+        {{#each burgers}}
+        {{#if devoured}}
+        <li class="list-group-item list-group-item-info">
+          {{burger_name}}
+        </li>
+        {{/if}}
+        {{/each}}
+      </ul>
+    </div>
   </div>
 
-  <button type="submit">Order</button>
-</form>
+
+</div>
